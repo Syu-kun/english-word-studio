@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f5f3ff">
+<title>English Word Studio | Step 5 & 6</title>
+<style>
+:root{--ink:#292641;--muted:#77748c;--purple:#7564d8;--purple2:#eeeaff;--pink:#f7e8f1;--mint:#e4f4ed;--paper:#fff;--line:#eceaf3;--good:#24845d;--bad:#c45168;--shadow:0 12px 35px rgba(47,39,87,.09)}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#f7f4ff,#fff8fb 55%,#f2faf7);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif;min-height:100vh}
+button,input{font:inherit}button{cursor:pointer}.wrap{max-width:760px;margin:auto;padding:22px 16px 50px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.brand{font-weight:850;letter-spacing:.04em}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:.16em}.pill{font-size:11px;background:#fff;border:1px solid var(--line);padding:7px 11px;border-radius:99px;color:var(--muted)}
+.hero{padding:27px 23px;border-radius:27px;background:linear-gradient(120deg,#e9e4ff,#fcecf4);box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"A a";position:absolute;right:17px;bottom:-27px;font-size:105px;font-weight:900;color:#fff8;transform:rotate(-10deg)}.eyebrow{font-size:11px;letter-spacing:.18em;font-weight:800;color:#786bb3}.hero h1{font-size:clamp(27px,7vw,39px);line-height:1.12;margin:9px 0}.hero p{color:#69647f;font-size:13px;margin:0;max-width:75%}
+.section-title{font-size:14px;margin:25px 2px 12px;color:#77718d;font-weight:800;letter-spacing:.06em}.chapters{display:grid;grid-template-columns:1fr 1fr;gap:13px}.chapter{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;text-align:left;box-shadow:var(--shadow);color:var(--ink);transition:.15s}.chapter:active,.mode:active,.btn:active{transform:scale(.98)}.chapter .num{font-size:11px;color:var(--purple);font-weight:900;letter-spacing:.13em}.chapter h2{margin:7px 0 4px;font-size:22px}.chapter p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}.chapter .count{display:inline-block;margin-top:13px;padding:5px 9px;background:var(--purple2);color:#6556b9;border-radius:99px;font-size:11px;font-weight:800}
+.panel{background:#fff;border:1px solid var(--line);border-radius:24px;padding:19px;box-shadow:var(--shadow);margin-top:17px}.panel h3{margin:0 0 12px;font-size:15px}.mode-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.mode{border:1px solid var(--line);border-radius:17px;background:#fff;padding:14px 7px;color:var(--ink);text-align:center}.mode .ico{font-size:24px;display:block;margin-bottom:6px}.mode b{display:block;font-size:12px}.mode small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+.hidden{display:none!important}.back{border:0;background:transparent;color:var(--muted);padding:7px 0;font-weight:700}.quiz-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 0 14px}.quiz-head h2{margin:0;font-size:21px}.progress{height:7px;background:#efedf5;border-radius:9px;overflow:hidden;margin:12px 0 20px}.progress span{height:100%;display:block;background:linear-gradient(90deg,#8575e8,#e39abb);width:0;transition:width .2s}.question-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:23px 17px;text-align:center;box-shadow:var(--shadow)}.q-label{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:.13em}.prompt{font-size:clamp(25px,7vw,34px);font-weight:850;margin:13px 0 7px;overflow-wrap:anywhere}.subprompt{font-size:13px;color:var(--muted)}.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.choice{min-height:57px;border:1px solid #e7e3f1;border-radius:15px;background:#fbfaff;color:var(--ink);font-weight:700;padding:10px}.choice.correct{background:#e6f6ee;border-color:#72c49c;color:#176746}.choice.wrong{background:#fff0f2;border-color:#e5a0ad;color:#a43f54}.feedback{min-height:26px;text-align:center;margin:13px 0 0;font-weight:800;font-size:14px}.feedback.good{color:var(--good)}.feedback.bad{color:var(--bad)}
+.inputrow{display:flex;gap:8px;margin-top:18px}.answer-input{width:100%;min-width:0;border:1.5px solid #ded9ee;border-radius:14px;padding:14px;font-size:18px;outline:none}.answer-input:focus{border-color:var(--purple);box-shadow:0 0 0 3px #7564d822}.btn{border:0;border-radius:14px;padding:13px 17px;background:var(--purple);color:#fff;font-weight:800;white-space:nowrap}.btn.secondary{background:#f0eef7;color:#5e5875}.btn.soft{background:var(--mint);color:#236c50}.btn:disabled{opacity:.4;cursor:not-allowed}.nextrow{display:flex;justify-content:center;margin-top:14px}
+.canvas-wrap{border:2px dashed #d8d2e9;background:#fdfcff;border-radius:18px;margin-top:17px;overflow:hidden;touch-action:none}.canvas-wrap canvas{display:block;width:100%;height:190px;touch-action:none}.canvas-tools{display:flex;justify-content:space-between;gap:8px;margin-top:10px}.canvas-tools button{font-size:12px;padding:9px 12px}.answer-reveal{background:#f0edff;border-radius:15px;padding:13px;margin-top:13px}.answer-reveal strong{font-size:23px;display:block;letter-spacing:.04em}.answer-reveal small{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:17px 0}.stat{background:#f8f7fc;border-radius:15px;padding:12px 5px;text-align:center}.stat b{font-size:21px;display:block}.stat small{font-size:10px;color:var(--muted)}.result{text-align:center;padding:25px 10px}.result .medal{font-size:48px}.result h2{font-size:26px;margin:7px}.result p{color:var(--muted);font-size:13px}.result-actions{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.notes{margin-top:22px}.notes details{border-bottom:1px solid var(--line);padding:12px 2px}.notes summary{font-weight:750;font-size:13px;cursor:pointer}.notes p{font-size:12px;color:#625e75;line-height:1.8;margin:9px 0 0}.note-tag{display:inline-block;background:#f2efff;color:#6557b6;padding:3px 7px;border-radius:7px;margin:3px;font-size:11px}
+.footer{text-align:center;color:#aaa5b7;font-size:10px;margin-top:28px}
+@media(max-width:420px){.wrap{padding:15px 12px 35px}.chapter{padding:15px}.mode-grid{gap:7px}.mode{padding:12px 4px}.mode b{font-size:11px}.choices{gap:8px}.choice{font-size:13px}.panel{padding:15px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">✦ English Word Studio<small>STEP 5 & STEP 6</small></div><div class="pill">VOCABULARY TRAINER</div></header>
+<main id="home">
+ <section class="hero"><div class="eyebrow">LET'S STUDY ENGLISH</div><h1>英単語を、<br>使える力に。</h1><p>意味を選んで、スペルを打って、手で書く。3つの方法で覚えよう！</p></section>
+ <div class="section-title">CHOOSE YOUR CHAPTER / チャプターを選択</div>
+ <div class="chapters">
+  <button class="chapter" onclick="selectChapter(5)"><div class="num">CHAPTER 05</div><h2>Step 5</h2><p>社会・旅行・仕事・動作など</p><span class="count" id="count5"></span></button>
+  <button class="chapter" onclick="selectChapter(6)"><div class="num">CHAPTER 06</div><h2>Step 6</h2><p>感情・質問・行事・性質など</p><span class="count" id="count6"></span></button>
+ </div>
+ <section class="panel"><h3>📚 学習モード</h3><div style="font-size:12px;color:var(--muted);line-height:1.7">チャプターを選ぶと、3つの学習方法から選べるよ。</div></section>
+ <div class="footer">Made for your English study ✦</div>
+</main>
+<main id="menu" class="hidden">
+ <button class="back" onclick="goHome()">← チャプター選択へ</button>
+ <section class="hero"><div class="eyebrow" id="chapterEyebrow">CHAPTER 05</div><h1 id="chapterTitle">Step 5</h1><p id="chapterDesc"></p></section>
+ <section class="panel"><h3>学習モードを選択</h3><div class="mode-grid">
+  <button class="mode" onclick="startQuiz('meaning')"><span class="ico">🔗</span><b>意味合わせ</b><small>日本語の意味を選ぼう</small></button>
+  <button class="mode" onclick="startQuiz('typing')"><span class="ico">⌨️</span><b>スペルテスト</b><small>英単語をタイピング</small></button>
+  <button class="mode" onclick="startQuiz('writing')"><span class="ico">✍️</span><b>手書きテスト</b><small>画面に書いて確認</small></button>
+ </div></section>
+ <section class="panel notes" id="chapterNotes"><h3>📝 ノートの重要表現・ポイント</h3><div id="notesContent"></div></section>
+</main>
+<main id="quiz" class="hidden">
+ <button class="back" onclick="backToMenu()">← モード選択へ</button>
+ <div class="quiz-head"><h2 id="quizTitle">意味合わせ</h2><div class="pill" id="counter">1 / 10</div></div>
+ <div class="progress"><span id="progressBar"></span></div>
+ <section id="questionArea"></section>
+</main>
+</div>
+<script>
+const data={
+5:[
+['social','社会の'],['survey','調査'],['news','ニュース'],['join','(〜に)参加する'],['poor','貧しい'],['rich','金持ち'],['smoke','(たばこを)吸う'],['problem','問題'],['peace','平和'],['nationality','国籍'],['trip','(短い)旅行'],['travel','(〜に)旅をする'],['stay','滞在する'],['visit','(〜を)訪問する'],['ride','(乗り物・馬に)乗る'],['foreign','外国の'],['world','世界'],['island','島'],['palace','宮殿'],['culture','文化'],['do','(〜を)する'],['laugh','(声を出して)笑う'],['jump','飛ぶ'],['pick','(〜を)選ぶ'],['find','(〜を)見つける'],['draw','(線)を引く'],['open','(〜を)開ける'],['repeat','(〜を)くり返す'],['start','出発する'],['drop','(〜を)落とす'],['job','仕事'],['engineer','技師'],['factory','工場'],['build','(〜を)建てる'],['judge','審判'],['life','命'],['office','事務所'],['always','いつも'],['usually','たいてい'],['often','よく、たびたび']
+],
+6:[
+['feel','(痛み・感情などを)感じる'],['fun','楽しさ'],['interesting','おもしろい'],['interested','興味をもった'],['exciting','わくわくさせる'],['excited','(〜に)興奮した'],['easy','簡単な'],['difficult','難しい'],['boring','退屈な'],['sorry','(〜が)気の毒で'],['ask','(〜を)たずねる'],['question','質問'],['answer','(〜に)返事をする'],['tell','(〜に)話す'],['mean','(〜を)意味する'],['interview','面接'],['reason','理由'],['matter','問題、ことがら'],['goal','目標'],['idea','考え'],['good','よい'],['bad','悪い'],['important','重要な'],['expensive','高価な'],['real','本物の'],['true','本当の'],['false','間違った'],['write','(〜を)書く'],['address','住所'],['letter','手紙'],['party','パーティ'],['event','行事'],['festival','祭り'],['contest','競技(会)'],['celebrate','(〜を)祝う'],['memory','思い出'],['merry','楽しい'],['guest','(宿泊)客'],['role','役割'],['list','一覧表']
+]};
+const notes={
+5:[
+['重要表現','be poor at A：Aがへたである<br>do without A：Aなしでやっていく<br>pick A out：Aを選ぶ<br>pick A up：Aを（車で）迎えにいく、拾う<br>start doing [to do]：〜し始める'],
+['頻度を表す副詞','always・usually・often などの副詞は置く位置に注意。<br>be動詞の後ろ：I’m always sleepy.（私はいつも眠い）<br>一般動詞の前：I always get up early.（私はいつも早起きする）']
+],
+6:[
+['似ている単語','guest：招待客・宿泊客<br>visitor：訪問客<br>customer：買い物客'],
+['重要表現','be true of A：Aに当てはまる<br>ask for A：Aを求める<br>tell A to do：Aに〜するよう命令（忠告）する<br>mean to do：〜するつもりである<br>feel free to do：気楽に〜する<br>feel like doing：〜したい気分である<br>be excited in A：ノート記載の表現']
+]};
+let chapter=5,mode='meaning',items=[],index=0,score=0,answered=false,wrongWords=[];
+const $=id=>document.getElementById(id);
+$('count5').textContent=data[5].length+' WORDS';$('count6').textContent=data[6].length+' WORDS';
+function show(id){['home','menu','quiz'].forEach(x=>$(x).classList.toggle('hidden',x!==id));}
+function selectChapter(n){chapter=n;$('chapterEyebrow').textContent='CHAPTER 0'+n;$('chapterTitle').textContent='Step '+n;$('chapterDesc').textContent=n===5?'社会・旅行・仕事・動作などの英単語':'感情・質問・行事・性質などの英単語';renderNotes();show('menu')}
+function goHome(){show('home')}function backToMenu(){show('menu')}
+function renderNotes(){$('notesContent').innerHTML=notes[chapter].map((n,i)=>`<details ${i===0?'open':''}><summary>${n[0]}</summary><p>${n[1]}</p></details>`).join('')}
+function shuffle(a){let b=[...a];for(let i=b.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+function startQuiz(m){mode=m;items=shuffle(data[chapter]);index=0;score=0;wrongWords=[];answered=false;$('quizTitle').textContent=m==='meaning'?'🔗 意味合わせ':m==='typing'?'⌨️ スペルテスト':'✍️ 手書きテスト';show('quiz');renderQuestion()}
+function updateProgress(){$('counter').textContent=(index+1)+' / '+items.length;$('progressBar').style.width=(index/items.length*100)+'%'}
+function renderQuestion(){if(index>=items.length){finish();return}answered=false;updateProgress();let [word,meaning]=items[index];let area=$('questionArea');
+if(mode==='meaning'){
+let opts=shuffle([meaning,...shuffle(data[chapter].filter(x=>x[0]!==word).map(x=>x[1])).slice(0,3)]);
+area.innerHTML=`<div class="question-card"><div class="q-label">この英単語の意味は？</div><div class="prompt">${word}</div><div class="subprompt">正しい日本語を選ぼう</div><div class="choices">${opts.map((v,i)=>`<button class="choice" data-val="${encodeURIComponent(v)}">${v}</button>`).join('')}</div><div class="feedback" id="feedback"></div><div class="nextrow"><button class="btn" id="next" disabled onclick="nextQuestion()">次へ →</button></div></div>`;
+area.querySelectorAll('.choice').forEach(b=>b.onclick=()=>checkMeaning(decodeURIComponent(b.dataset.val),meaning,b));
+}else if(mode==='typing'){
+area.innerHTML=`<div class="question-card"><div class="q-label">英語に直して入力しよう</div><div class="prompt">${meaning}</div><div class="subprompt">日本語の意味に合う英単語を入力</div><form class="inputrow" id="typeForm"><input class="answer-input" id="typed" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="英単語を入力"><button class="btn">回答</button></form><div class="feedback" id="feedback"></div><div class="nextrow"><button class="btn" id="next" disabled onclick="nextQuestion()">次へ →</button></div></div>`;
+$('typeForm').onsubmit=e=>{e.preventDefault();checkTyping()};
+$('typed').focus();
+}else{
+area.innerHTML=`<div class="question-card"><div class="q-label">英語のスペルを書いてみよう</div><div class="prompt">${meaning}</div><div class="subprompt">下のスペースに指やペンで書こう！</div><div class="canvas-wrap"><canvas id="pad"></canvas></div><div class="canvas-tools"><button class="btn secondary" onclick="clearPad()">消す</button><button class="btn" id="reveal" onclick="revealAnswer()">答えを見る</button></div><div id="revealed"></div><div class="feedback" id="feedback"></div><div class="nextrow"><button class="btn" id="next" disabled onclick="nextQuestion()">次へ →</button></div></div>`;
+setupCanvas();
+}}
+function checkMeaning(v,correct,btn){if(answered)return;answered=true;let ok=v===correct;if(ok)score++;else wrongWords.push(items[index]);document.querySelectorAll('.choice').forEach(b=>{b.disabled=true;let val=decodeURIComponent(b.dataset.val);if(val===correct)b.classList.add('correct');else if(b===btn)b.classList.add('wrong')});$('feedback').textContent=ok?'正解！ ✨':'おしい！ 正解は「'+correct+'」';$('feedback').className='feedback '+(ok?'good':'bad');$('next').disabled=false}
+function checkTyping(){if(answered)return;let typed=$('typed').value.trim().toLowerCase(),correct=items[index][0].toLowerCase(),ok=typed===correct;answered=true;if(ok)score++;else wrongWords.push(items[index]);$('typed').disabled=true;$('feedback').textContent=ok?'正解！ ✨':'正解は「'+correct+'」';$('feedback').className='feedback '+(ok?'good':'bad');$('next').disabled=false}
+function nextQuestion(){index++;renderQuestion()}
+function setupCanvas(){let c=$('pad'),ctx=c.getContext('2d'),rect=c.getBoundingClientRect(),dpr=window.devicePixelRatio||1;c.width=rect.width*dpr;c.height=190*dpr;ctx.scale(dpr,dpr);ctx.lineWidth=3;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#34304a';let drawing=false;function pos(e){let r=c.getBoundingClientRect();return [e.clientX-r.left,e.clientY-r.top]}c.onpointerdown=e=>{if(answered)return;drawing=true;c.setPointerCapture(e.pointerId);let p=pos(e);ctx.beginPath();ctx.moveTo(...p)};c.onpointermove=e=>{if(!drawing)return;ctx.lineTo(...pos(e));ctx.stroke()};c.onpointerup=c.onpointercancel=()=>drawing=false;window.padCtx=ctx;window.padCanvas=c}
+function clearPad(){if(answered)return;let c=window.padCanvas,ctx=window.padCtx;ctx.clearRect(0,0,c.width,c.height)}
+function revealAnswer(){if(answered)return;answered=true;let word=items[index][0];$('revealed').innerHTML=`<div class="answer-reveal"><small>正しいスペル</small><strong>${word}</strong><small>自分の書いたスペルと見比べてみよう</small><div style="display:flex;gap:8px;margin-top:11px"><button class="btn soft" onclick="selfMark(true)">書けた！</button><button class="btn secondary" onclick="selfMark(false)">もう一度練習</button></div></div>`;$('reveal').disabled=true}
+function selfMark(ok){if(ok)score++;else wrongWords.push(items[index]);$('feedback').textContent=ok?'セルフチェック：正解！':'セルフチェック：復習リストに追加';$('feedback').className='feedback '+(ok?'good':'bad');document.querySelectorAll('.answer-reveal button').forEach(b=>b.disabled=true);$('next').disabled=false}
+function finish(){$('progressBar').style.width='100%';let pct=Math.round(score/items.length*100);$('counter').textContent='COMPLETE';$('questionArea').innerHTML=`<div class="question-card result"><div class="medal">${pct>=90?'🏆':pct>=70?'🌟':'🌱'}</div><h2>おつかれさま！</h2><p>Step ${chapter} の学習が終了したよ。</p><div class="stats"><div class="stat"><b>${score}</b><small>正解数</small></div><div class="stat"><b>${items.length-score}</b><small>復習する単語</small></div><div class="stat"><b>${pct}%</b><small>正答率</small></div></div><div style="text-align:left;font-size:13px;font-weight:800;margin-top:16px">今回の復習単語</div><div style="text-align:left;font-size:12px;color:var(--muted);line-height:1.9;margin-top:6px">${wrongWords.length?wrongWords.map(w=>`<div><b style="color:var(--ink)">${w[0]}</b>：${w[1]}</div>`).join(''):'全問クリア！すばらしい！'}</div><div class="result-actions"><button class="btn" onclick="startQuiz(mode)">もう一度挑戦</button><button class="btn secondary" onclick="backToMenu()">モード選択へ</button></div></div>`}
+</script>
+</body>
+</html>
